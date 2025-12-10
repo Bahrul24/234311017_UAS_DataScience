@@ -3,7 +3,7 @@
 
 ## 👤 Informasi
 - **Nama:** Mohammad Dimas Bahrul Ikhwani 
-- **Repo:** https://github.com/SalvaMahardhika/234311026_UAS_DataScience  
+- **Repo:** https://github.com/Bahrul24/234311017_UAS_DataScience  
 - **Video:** [...]  
 
 ---
