@@ -8,7 +8,7 @@
 **Mata Kuliah:** Machine Learning  
 **Dosen Pengampu:** [Masukkan Nama Dosen]  
 **Tahun Akademik:** 2024/2025  
-**Link GitHub Repository:** [Masukkan URL Repository GitHub Anda]  
+**Link GitHub Repository:** https://github.com/Bahrul24/234311017_UAS_DataScience  
 **Link Video Pembahasan:** [Masukkan URL Video (Jika Ada)]  
 
 ---
