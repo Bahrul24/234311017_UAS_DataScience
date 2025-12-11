@@ -201,3 +201,96 @@ model_advanced.fit(X_train, y_train)
 
 # Prediksi
 y_pred_advanced = model_advanced.predict(X_test)
+
+```
+---
+
+#### 6.2.4 Hasil Model
+
+**Evaluasi pada Data Test:**
+Model Random Forest menunjukkan performa yang sangat stabil dan akurat pada data pengujian.
+
+- **MAE:** 1.58
+- **MSE:** 4.58
+- **R² Score:** 0.91
+
+**Analisis Singkat:**
+Skor R² sebesar 0.91 menunjukkan bahwa model mampu menjelaskan 91% variasi data. Ini adalah peningkatan yang sangat signifikan dibandingkan baseline.
+
+---
+
+### 6.3 Model 3 — Deep Learning Model (WAJIB)
+
+#### 6.3.1 Deskripsi Model
+
+**Nama Model:** Multilayer Perceptron (MLP) / Feed Forward Neural Network
+
+** (Centang) Jenis Deep Learning: **
+- [x] Multilayer Perceptron (MLP) - untuk tabular
+- [ ] Convolutional Neural Network (CNN) - untuk image
+- [ ] Recurrent Neural Network (LSTM/GRU) - untuk sequential/text
+- [ ] Transfer Learning - untuk image
+- [ ] Transformer-based - untuk NLP
+
+**Alasan Pemilihan:**
+Arsitektur MLP adalah standar untuk data tabular. Kita menggunakannya untuk menguji apakah pendekatan *Deep Learning* mampu menangkap pola non-linear yang lebih kompleks dibandingkan *Ensemble Machine Learning* (Random Forest) pada dataset dengan jumlah sampel terbatas.
+
+#### 6.3.2 Arsitektur Model
+
+**Deskripsi Layer:**
+
+| No | Layer Type | Output Shape | Param # | Aktivasi | Fungsi |
+|----|------------|--------------|---------|----------|--------|
+| 1 | Input Layer | (None, 7) | 0 | - | Menerima 7 fitur input hasil seleksi |
+| 2 | Dense | (None, 64) | 512 | ReLU | Ekstraksi fitur tahap awal |
+| 3 | Dropout | (None, 64) | 0 | - | Rate 0.2 (Mencegah Overfitting) |
+| 4 | Dense | (None, 32) | 2,080 | ReLU | Memperhalus representasi fitur |
+| 5 | Dense | (None, 1) | 33 | Linear | Output regresi (nilai kontinu) |
+
+**Total parameters:** 2,625 (Trainable)
+
+#### 6.3.3 Input & Preprocessing Khusus
+
+**Input shape:** `(Batch_Size, 7)`
+
+**Preprocessing khusus untuk DL:**
+- **Standard Scaling (Wajib):** Fitur input dinormalisasi menggunakan `StandardScaler` (Mean=0, Std=1). Tanpa normalisasi, *gradient descent* akan sulit mencapai konvergensi karena perbedaan skala fitur yang ekstrem (misal: *weight* ribuan vs *cylinders* satuan).
+
+#### 6.3.4 Hyperparameter
+
+**Training Configuration:**
+- **Optimizer:** Adam (Adaptive Moment Estimation)
+- **Loss function:** MSE (Mean Squared Error)
+- **Metrics:** MAE (Mean Absolute Error)
+- **Batch size:** 32
+- **Epochs:** 100
+- **Validation split:** 20%
+
+#### 6.3.5 Implementasi (Ringkas)
+
+**Framework:** TensorFlow/Keras
+
+```python
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+
+# Membangun Arsitektur
+model_dl = Sequential([
+    Dense(64, activation='relu', input_shape=(7,)),
+    Dropout(0.2),
+    Dense(32, activation='relu'),
+    Dense(1)
+])
+
+# Compile
+model_dl.compile(optimizer='adam', loss='mse', metrics=['mae'])
+
+# Training
+history = model_dl.fit(
+    X_train_scaled, y_train,
+    validation_split=0.2,
+    epochs=100,
+    batch_size=32,
+    verbose=0
+)
