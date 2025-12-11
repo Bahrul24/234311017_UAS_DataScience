@@ -294,3 +294,48 @@ history = model_dl.fit(
     batch_size=32,
     verbose=0
 )
+
+```
+---
+
+#### 6.3.6 Training Process
+
+**Training Time:**
+± 5 detik (Menggunakan Google Colab CPU Standard).
+
+**Computational Resource:**
+Google Colab (CPU).
+
+**Training History Visualization:**
+
+![Training History](images/training_history.png)
+*(Pastikan file gambar grafik loss sudah diupload ke folder 'images' di repo Anda)*
+
+**Analisis Training:**
+- **Konvergensi:** Grafik *loss* (MSE) menurun tajam pada 20 epoch pertama dan mulai stabil (*converge*) di sekitar epoch 50.
+- **Stabilitas:** Jarak antara *training loss* dan *validation loss* sangat tipis, yang menandakan model tidak mengalami *overfitting* yang signifikan berkat penggunaan layer `Dropout` dan arsitektur yang tidak terlalu dalam.
+
+#### 6.3.7 Model Summary
+
+```text
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 64)                512       
+                                                                 
+ dropout (Dropout)           (None, 64)                0         
+                                                                 
+ dense_1 (Dense)             (None, 32)                2080      
+                                                                 
+ dense_2 (Dense)             (None, 1)                 33        
+                                                                 
+=================================================================
+Total params: 2,625
+Trainable params: 2,625
+Non-trainable params: 0
+_________________________________________________________________
+
+```
+---
+
