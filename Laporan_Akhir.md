@@ -4,12 +4,12 @@
 
 **Nama Mahasiswa:** Mohammad Dimas Bahrul Ikhwani  
 **NIM:** [Masukkan NIM Anda]  
-**Program Studi:** [Teknologi Informasi / Data Science]  
+**Program Studi:** Teknologi Informasi  
 **Mata Kuliah:** Machine Learning  
 **Dosen Pengampu:** [Masukkan Nama Dosen]  
 **Tahun Akademik:** 2024/2025  
-**Link GitHub Repository:** [Masukkan Link Repository GitHub Anda]  
-**Link Video Pembahasan:** [Masukkan Link Video (Jika Ada)]  
+**Link GitHub Repository:** [Masukkan URL Repository GitHub Anda]  
+**Link Video Pembahasan:** [Masukkan URL Video (Jika Ada)]  
 
 ---
 
@@ -19,10 +19,10 @@ Pada proyek ini, mahasiswa diharapkan dapat:
 2. ✅ Melakukan analisis dan eksplorasi data (EDA) secara komprehensif
 3. ✅ Melakukan data preparation yang sesuai dengan karakteristik dataset
 4. ✅ Mengembangkan tiga model machine learning yang terdiri dari (**WAJIB**):
-   - Model Baseline (Dummy Regressor)
-   - Model Machine Learning (Random Forest)
-   - Model Deep Learning (Multilayer Perceptron)
-5. ✅ Menggunakan metrik evaluasi yang relevan dengan jenis tugas ML (MAE, MSE, R2 Score)
+   - Model Baseline
+   - Model Machine Learning / Advanced
+   - Model Deep Learning (**WAJIB**)
+5. ✅ Menggunakan metrik evaluasi yang relevan dengan jenis tugas ML
 6. ✅ Melaporkan hasil eksperimen secara ilmiah dan sistematis
 7. ✅ Mengunggah seluruh kode proyek ke GitHub (**WAJIB**)
 8. ✅ Menerapkan prinsip software engineering dalam pengembangan proyek
@@ -38,6 +38,8 @@ Permasalahan utama adalah hubungan antara spesifikasi teknis (seperti berat, kap
 
 **Referensi:**
 > Quinlan, R. (1993). *Auto MPG Data Set*. UCI Machine Learning Repository.
+
+---
 
 ## 3. BUSINESS UNDERSTANDING / PROBLEM UNDERSTANDING
 
@@ -100,11 +102,11 @@ Proyek ini menggunakan tiga model perbandingan:
 ### 4.4 Exploratory Data Analysis (EDA)
 
 #### Visualisasi 1: Correlation Heatmap
-![Heatmap](images/heatmap_placeholder.png) *[Pastikan Anda upload gambar ini ke folder images]*
+![Heatmap](images/heatmap_placeholder.png) *[Silakan ganti dengan file gambar heatmap Anda]*
 **Insight:** Fitur `weight` dan `displacement` memiliki korelasi negatif yang sangat kuat (~ -0.8) terhadap `mpg`. Artinya, semakin berat mobil, semakin boros bahan bakarnya.
 
 #### Visualisasi 2: Pairplot MPG vs Weight
-![Scatter Plot](images/scatter_placeholder.png) *[Pastikan Anda upload gambar ini ke folder images]*
+![Scatter Plot](images/scatter_placeholder.png) *[Silakan ganti dengan file gambar scatter plot Anda]*
 **Insight:** Hubungan antara berat dan MPG tidak sepenuhnya linear (sedikit melengkung), yang mengindikasikan bahwa model non-linear (seperti Random Forest/Neural Network) akan bekerja lebih baik daripada Linear Regression biasa.
 
 ---
@@ -132,7 +134,7 @@ Tidak ada fitur baru yang ditambahkan, namun fitur `origin` dibiarkan sebagai nu
 * **Random state:** 42 (Untuk hasil yang konsisten/reproducible).
 
 ### 5.6 Ringkasan Data Preparation
-1.  **Cleaning:** Agar model tidak error saat training.
+1.  **Cleaning:** Agar model tidak error saat training karena *missing values*.
 2.  **Scaling:** Agar fitur dengan nilai besar (`weight`) tidak mendominasi fitur kecil (`cylinders`) pada model Deep Learning.
 3.  **Splitting:** Memisahkan data uji untuk evaluasi yang jujur.
 
@@ -141,54 +143,13 @@ Tidak ada fitur baru yang ditambahkan, namun fitur `origin` dibiarkan sebagai nu
 ## 6. MODELING
 
 ### 6.1 Model 1 — Baseline Model
+#### 6.1.1 Deskripsi Model
 **Nama Model:** Dummy Regressor
-**Strategi:** `strategy="mean"`
-**Implementasi:**
+**Teori Singkat:** Model ini memprediksi nilai rata-rata variabel target dari data pelatihan untuk semua input baru.
+**Alasan Pemilihan:** Sebagai baseline sederhana untuk memastikan model machine learning yang kompleks benar-benar belajar pola, bukan hanya menebak.
+
+#### 6.1.3 Implementasi (Ringkas)
 ```python
 from sklearn.dummy import DummyRegressor
 baseline = DummyRegressor(strategy="mean")
 baseline.fit(X_train, y_train)
-
----
-
-### 6.2 Model 2 — ML / Advanced Model
-
-#### 6.2.1 Deskripsi Model
-
-**Nama Model:** Random Forest Regressor
-
-**Teori Singkat:** Random Forest adalah algoritma *ensemble learning* yang bekerja dengan membangun banyak pohon keputusan (*decision trees*) pada waktu pelatihan. Untuk tugas regresi, model ini mengambil rata-rata prediksi dari setiap pohon individu. Pendekatan ini membantu mengurangi varian dan risiko *overfitting* dibandingkan dengan satu *decision tree* tunggal.
-
-**Alasan Pemilihan:** Dataset Auto MPG memiliki fitur non-linear (seperti hubungan antara *weight* dan *mpg*). Random Forest sangat baik dalam menangkap pola non-linear tanpa memerlukan asumsi distribusi data yang ketat. Selain itu, model ini relatif tangguh terhadap *outliers*.
-
-**Keunggulan:**
-- Mampu menangkap hubungan non-linear yang kompleks.
-- Tidak terlalu sensitif terhadap skala data (scaling tidak wajib, meski tetap baik dilakukan).
-- Robust terhadap noise dan outlier.
-
-**Kelemahan:**
-- Model bisa menjadi berat (ukuran file besar) jika jumlah pohon (*n_estimators*) terlalu banyak.
-- Interpretabilitas tidak sejelas Linear Regression (Black Box).
-
-#### 6.2.2 Hyperparameter
-
-**Parameter yang digunakan:**
-- `n_estimators`: 100 (Menggunakan 100 pohon keputusan).
-- `random_state`: 42 (Untuk memastikan hasil yang konsisten/reproducible).
-- `criterion`: 'squared_error' (Default untuk meminimalkan MSE saat splitting).
-
-#### 6.2.3 Implementasi (Ringkas)
-```python
-from sklearn.ensemble import RandomForestRegressor
-
-# Inisialisasi model
-model_advanced = RandomForestRegressor(
-    n_estimators=100,
-    random_state=42
-)
-
-# Training model
-model_advanced.fit(X_train, y_train)
-
-# Prediksi
-y_pred_advanced = model_advanced.predict(X_test)
