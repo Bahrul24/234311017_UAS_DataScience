@@ -153,3 +153,51 @@ Tidak ada fitur baru yang ditambahkan, namun fitur `origin` dibiarkan sebagai nu
 from sklearn.dummy import DummyRegressor
 baseline = DummyRegressor(strategy="mean")
 baseline.fit(X_train, y_train)
+
+```
+---
+
+### 6.2 Model 2 — ML / Advanced Model
+
+#### 6.2.1 Deskripsi Model
+
+**Nama Model:** Random Forest Regressor
+
+**Teori Singkat:**
+Random Forest adalah algoritma *ensemble learning* yang membangun banyak *decision trees* (pohon keputusan) saat pelatihan. Untuk regresi, model ini mengambil rata-rata prediksi dari setiap pohon individu. Metode ini mengurangi risiko *overfitting* yang sering terjadi pada satu *decision tree* tunggal.
+
+**Alasan Pemilihan:**
+Dataset Auto MPG memiliki hubungan non-linear antar fitur (misalnya hubungan *weight* dengan *mpg*). Random Forest sangat baik dalam menangkap pola non-linear tersebut secara otomatis tanpa asumsi distribusi data yang ketat.
+
+**Keunggulan:**
+- Akurasi tinggi pada data tabular.
+- Robust terhadap *outlier* dan *noise*.
+- Tidak terlalu sensitif terhadap skala data (scaling).
+
+**Kelemahan:**
+- Model bisa menjadi berat (ukuran file besar) jika jumlah pohon sangat banyak.
+- Sulit diinterpretasikan secara visual dibandingkan *single tree* (Black Box).
+
+#### 6.2.2 Hyperparameter
+
+**Parameter yang digunakan:**
+- `n_estimators`: 100 (Jumlah pohon keputusan).
+- `random_state`: 42 (Untuk hasil yang konsisten).
+- `criterion`: 'squared_error' (Meminimalkan MSE saat splitting).
+
+#### 6.2.3 Implementasi (Ringkas)
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+
+# Inisialisasi model
+model_advanced = RandomForestRegressor(
+    n_estimators=100,
+    random_state=42
+)
+
+# Training model
+model_advanced.fit(X_train, y_train)
+
+# Prediksi
+y_pred_advanced = model_advanced.predict(X_test)
