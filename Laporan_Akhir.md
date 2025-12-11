@@ -3,8 +3,8 @@
 **Judul Proyek:** Analisis Prediksi Konsumsi Bahan Bakar (MPG) Menggunakan Baseline, Machine Learning, dan Deep Learning
 
 **Nama Mahasiswa:** Mohammad Dimas Bahrul Ikhwani  
-**NIM:** [Masukkan NIM Anda]  
-**Program Studi:** Teknologi Informasi  
+**NIM:** 234311017  
+**Program Studi:** Teknologi Rekayasa Perangkat Lunak  
 **Mata Kuliah:** Machine Learning  
 **Dosen Pengampu:** [Masukkan Nama Dosen]  
 **Tahun Akademik:** 2024/2025  
@@ -101,13 +101,19 @@ Proyek ini menggunakan tiga model perbandingan:
 
 ### 4.4 Exploratory Data Analysis (EDA)
 
-#### Visualisasi 1: Correlation Heatmap
-![Heatmap](images/heatmap_placeholder.png) *[Silakan ganti dengan file gambar heatmap Anda]*
-**Insight:** Fitur `weight` dan `displacement` memiliki korelasi negatif yang sangat kuat (~ -0.8) terhadap `mpg`. Artinya, semakin berat mobil, semakin boros bahan bakarnya.
+Berikut adalah 3 visualisasi utama untuk memahami karakteristik data:
 
-#### Visualisasi 2: Pairplot MPG vs Weight
-![Scatter Plot](images/scatter_placeholder.png) *[Silakan ganti dengan file gambar scatter plot Anda]*
-**Insight:** Hubungan antara berat dan MPG tidak sepenuhnya linear (sedikit melengkung), yang mengindikasikan bahwa model non-linear (seperti Random Forest/Neural Network) akan bekerja lebih baik daripada Linear Regression biasa.
+#### Visualisasi 1: Distribusi Target (MPG)
+![Distribusi MPG](images/eda_1_distribution.png)
+**Insight:** Data MPG memiliki distribusi yang sedikit miring ke kanan (*right-skewed*), menunjukkan bahwa sebagian besar mobil memiliki efisiensi bahan bakar di kisaran 15-25 MPG.
+
+#### Visualisasi 2: Correlation Heatmap
+![Heatmap Korelasi](images/eda_2_heatmap.png)
+**Insight:** Terlihat korelasi negatif yang sangat kuat (warna biru gelap) antara `mpg` dengan `weight` (-0.83) dan `displacement` (-0.80). Ini mengonfirmasi bahwa fitur fisik kendaraan adalah prediktor utama.
+
+#### Visualisasi 3: Scatter Plot (Weight vs MPG)
+![Scatter Weight vs MPG](images/eda_3_scatter.png)
+**Insight:** Pola persebaran data menunjukkan hubungan non-linear (melengkung). Semakin berat kendaraan, MPG semakin turun drastis. Namun, penurunan MPG mulai melandai pada kendaraan yang sangat berat.
 
 ---
 
