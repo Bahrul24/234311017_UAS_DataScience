@@ -339,3 +339,156 @@ _________________________________________________________________
 ```
 ---
 
+## 7. EVALUATION
+
+### 7.1 Metrik Evaluasi
+
+Karena proyek ini adalah tugas **Regresi**, metrik evaluasi yang digunakan adalah:
+
+1.  **MAE (Mean Absolute Error):**
+    * Rata-rata selisih mutlak antara nilai prediksi dan nilai aktual.
+    * *Alasan:* Mudah diinterpretasikan karena satuannya sama dengan target (MPG).
+2.  **MSE (Mean Squared Error):**
+    * Rata-rata kuadrat dari selisih prediksi.
+    * *Alasan:* Memberikan penalti yang lebih besar pada kesalahan yang ekstrim (outlier).
+3.  **R² Score (Coefficient of Determination):**
+    * Mengukur seberapa baik model dapat menjelaskan variasi dalam data.
+    * *Skala:* 1.0 (Sempurna), 0.0 (Setara rata-rata), Negatif (Lebih buruk dari rata-rata).
+
+### 7.2 Hasil Evaluasi Model
+
+#### 7.2.1 Model 1 (Baseline)
+
+**Metrik:**
+- **MAE:** 5.96
+- **MSE:** 53.98
+- **R² Score:** -0.004
+
+**Analisis:**
+Model ini memiliki R² negatif, yang berarti model gagal menangkap pola apa pun. Ini wajar karena Baseline hanya memprediksi nilai rata-rata.
+
+#### 7.2.2 Model 2 (Random Forest - Advanced)
+
+**Metrik:**
+- **MAE:** 1.58
+- **MSE:** 4.58
+- **R² Score:** 0.91
+
+**Analisis:**
+Performa sangat baik dengan akurasi (R²) mencapai 91%. Kesalahan rata-rata (MAE) sangat rendah, hanya meleset sekitar 1.5 MPG dari angka aslinya.
+
+#### 7.2.3 Model 3 (Deep Learning)
+
+**Metrik:**
+- **MAE:** 1.85
+- **MSE:** 6.16
+- **R² Score:** 0.88
+
+**Analisis:**
+Performa kompetitif dan cukup akurat, namun sedikit di bawah Random Forest. Hal ini mungkin disebabkan oleh jumlah data yang relatif kecil untuk ukuran model Neural Network.
+
+### 7.3 Perbandingan Ketiga Model
+
+**Tabel Perbandingan:**
+
+| Model | MAE (Error) | MSE | R² Score | Training Time |
+|-------|-------------|-----|----------|---------------|
+| Baseline | 5.96 | 53.98 | -0.004 | < 0.1s |
+| **Random Forest** | **1.58** | **4.58** | **0.91** | **~0.5s** |
+| Deep Learning | 1.85 | 6.16 | 0.88 | ~5.0s |
+
+**Visualisasi Perbandingan:**
+
+![Comparison R2 Score](images/comparison_r2.png)
+*(Pastikan gambar perbandingan R2 sudah ada di folder images)*
+
+### 7.4 Analisis Hasil
+
+**Interpretasi:**
+
+1.  **Model Terbaik:** **Random Forest Regressor** terpilih sebagai model terbaik karena memiliki error terendah dan stabilitas tertinggi.
+2.  **Perbandingan dengan Baseline:** Terjadi peningkatan performa yang masif. Penggunaan Machine Learning menurunkan error dari ~6 MPG (Baseline) menjadi ~1.5 MPG.
+3.  **Trade-off:**
+    * **Random Forest:** Sangat efisien untuk data tabular kecil, cepat dilatih, dan akurat.
+    * **Deep Learning:** Membutuhkan *resource* lebih besar dan *preprocessing* (scaling) yang ketat. Pada kasus ini, kompleksitas Deep Learning belum memberikan keuntungan signifikan dibanding *Ensemble Tree*.
+
+---
+
+## 8. CONCLUSION
+
+### 8.1 Kesimpulan Utama
+
+**Model Terbaik:**
+Random Forest Regressor (R² = 0.91).
+
+**Alasan:**
+Model ini mampu menangkap hubungan non-linear antara spesifikasi kendaraan (berat, cc, silinder) dengan konsumsi bahan bakar secara sangat akurat tanpa mengalami overfitting yang berarti.
+
+**Pencapaian Goals:**
+Tercapai. Proyek ini berhasil memprediksi MPG dengan akurasi di atas 85% (Target awal > 80%).
+
+### 8.2 Key Insights
+
+**Insight dari Data:**
+1.  **Berat Kendaraan (*Weight*):** Faktor paling krusial. Semakin berat kendaraan, konsumsi bahan bakar semakin boros (korelasi negatif kuat).
+2.  **Tahun Pembuatan (*Model Year*):** Kendaraan buatan tahun yang lebih muda cenderung lebih irit, membuktikan adanya efisiensi teknologi mesin seiring berjalannya waktu.
+
+**Insight dari Modeling:**
+1.  Data Preprocessing (Imputasi dan Scaling) sangat penting, terutama untuk Deep Learning.
+2.  Untuk data tabular dengan jumlah baris sedikit (< 1000), algoritma *Tree-based* (seperti Random Forest) seringkali mengungguli Neural Network.
+
+### 8.3 Kontribusi Proyek
+
+**Manfaat praktis:**
+Sistem ini dapat digunakan oleh **Dealer Mobil Bekas** atau **Konsumen** untuk mengestimasi tingkat keiritan bensin sebuah mobil hanya dengan melihat spesifikasi di atas kertas, tanpa perlu melakukan tes jalan (*test drive*) yang memakan biaya.
+
+**Pembelajaran yang didapat:**
+Memahami pentingnya membandingkan model kompleks (Deep Learning) dengan model klasik (Random Forest) untuk menentukan solusi paling efisien.
+
+---
+
+## 9. FUTURE WORK (Opsional)
+
+**Saran pengembangan untuk proyek selanjutnya:**
+
+**Data:**
+- [x] Mengumpulkan lebih banyak data
+- [x] Menambah variasi data (Mobil tahun 2000 ke atas)
+- [ ] Feature engineering lebih lanjut (misal: Rasio tenaga per berat)
+
+**Model:**
+- [x] Hyperparameter tuning lebih ekstensif (GridSearch pada RF)
+- [ ] Mencoba ensemble methods lain (XGBoost / LightGBM)
+
+**Deployment:**
+- [x] Membuat web application (Streamlit/Gradio)
+- [ ] Membuat API (Flask/FastAPI)
+
+---
+
+## 10. REPRODUCIBILITY (WAJIB)
+
+### 10.1 GitHub Repository
+
+**Link Repository:** [Masukkan URL GitHub Anda Di Sini]
+
+**Repository berisi:**
+- ✅ Notebook Jupyter/Colab dengan hasil running (`uas_datascience.ipynb`)
+- ✅ Script Python (`src/data_loader.py`)
+- ✅ requirements.txt
+- ✅ README.md yang informatif
+- ✅ Folder structure yang terorganisir (`data`, `models`, `images`)
+- ✅ .gitignore
+
+### 10.2 Environment & Dependencies
+
+**Python Version:** 3.10+
+
+**Main Libraries & Versions:**
+```text
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+tensorflow (untuk Deep Learning)
