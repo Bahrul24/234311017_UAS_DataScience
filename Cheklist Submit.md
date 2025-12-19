@@ -24,7 +24,7 @@ Gunakan checklist ini untuk memverifikasi kelengkapan proyek sebelum submit.
 - [x] **Struktur Folder:** Script otomatis membuat folder `data/`, `models/`, `images/`, `src/`.
 - [x] **README.md:** Isi Laporan `.md` bisa langsung dijadikan README.
 - [x] **Requirements:** Daftar library (pandas, numpy, sklearn, tensorflow) sudah ada di laporan.
-- [ ] **.gitignore:** *[Perlu buat file .gitignore manual agar folder sampah tidak terupload]*
+- [x] **.gitignore:** 
 
 ---
 
