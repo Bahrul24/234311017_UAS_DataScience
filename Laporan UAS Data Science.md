@@ -5,11 +5,11 @@
 **Nama Mahasiswa:** Mohammad Dimas Bahrul Ikhwani  
 **NIM:** 234311017  
 **Program Studi:** Teknologi Rekayasa Perangkat Lunak  
-**Mata Kuliah:** Machine Learning  
-**Dosen Pengampu:** [Masukkan Nama Dosen]  
+**Mata Kuliah:** Data Science  
+**Dosen Pengampu:** Gus Nanang Syaifudin  
 **Tahun Akademik:** 2024/2025  
 **Link GitHub Repository:** https://github.com/Bahrul24/234311017_UAS_DataScience  
-**Link Video Pembahasan:** [Masukkan URL Video (Jika Ada)]  
+**Link Video Pembahasan:** https://youtu.be/QLz-TrGvI_U  
 
 ---
 
@@ -18,13 +18,13 @@ Pada proyek ini, mahasiswa diharapkan dapat:
 1. ✅ Memahami konteks masalah dan merumuskan problem statement secara jelas
 2. ✅ Melakukan analisis dan eksplorasi data (EDA) secara komprehensif
 3. ✅ Melakukan data preparation yang sesuai dengan karakteristik dataset
-4. ✅ Mengembangkan tiga model machine learning yang terdiri dari (**WAJIB**):
+4. ✅ Mengembangkan tiga model machine learning yang terdiri dari:
    - Model Baseline
    - Model Machine Learning / Advanced
-   - Model Deep Learning (**WAJIB**)
+   - Model Deep Learning 
 5. ✅ Menggunakan metrik evaluasi yang relevan dengan jenis tugas ML
 6. ✅ Melaporkan hasil eksperimen secara ilmiah dan sistematis
-7. ✅ Mengunggah seluruh kode proyek ke GitHub (**WAJIB**)
+7. ✅ Mengunggah seluruh kode proyek ke GitHub 
 8. ✅ Menerapkan prinsip software engineering dalam pengembangan proyek
 
 ---
