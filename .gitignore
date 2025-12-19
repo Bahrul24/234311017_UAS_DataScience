@@ -10,8 +10,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# --- 3. Jupyter Notebook Checkpoints (Sangat Penting!) ---
-# Ini mencegah file backup otomatis Colab terupload
+# --- 3. Jupyter Notebook Checkpoints 
 .ipynb_checkpoints/
 */.ipynb_checkpoints/
 
@@ -20,14 +19,3 @@ venv/
 env/
 my_env/
 
-# --- 5. Data Besar (Sesuai Checklist) ---
-# Jika file data Anda > 100MB, GitHub akan menolak.
-# Uncomment (hapus tanda #) baris di bawah jika dataset Anda sangat besar.
-# data/*.csv
-# data/*.data
-# data/*.zip
-
-# --- 6. File Model yang Terlalu Besar (Opsional) ---
-# Jika model Deep Learning (.h5) ukurannya > 100MB, abaikan juga.
-# *.h5
-# *.pkl

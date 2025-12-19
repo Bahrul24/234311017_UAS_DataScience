@@ -6,7 +6,7 @@
 **NIM:** 234311017  
 **Program Studi:** Teknologi Rekayasa Perangkat Lunak  
 **Mata Kuliah:** Data Science  
-**Dosen Pengampu:** Gus Nanang Syaifudin  
+**Dosen Pengampu:** Gus Nanang Syaifuddiin  
 **Tahun Akademik:** 2024/2025  
 **Link GitHub Repository:** https://github.com/Bahrul24/234311017_UAS_DataScience  
 **Link Video Pembahasan:** https://youtu.be/QLz-TrGvI_U  
