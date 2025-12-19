@@ -7,7 +7,6 @@ Gunakan checklist ini untuk memverifikasi kelengkapan proyek sebelum submit.
 ---
 
 ## 1. Laporan (PDF / Word / Markdown)
-*Status konten laporan berdasarkan template yang telah dibuat:*
 
 - [x] **Kelengkapan Section:** Semua bagian (Pendahuluan s/d Kesimpulan) sudah terisi lengkap di file `.md`.
 - [x] **3 Model:** Penjelasan Baseline, Random Forest, dan Deep Learning sudah ditulis.
@@ -19,9 +18,8 @@ Gunakan checklist ini untuk memverifikasi kelengkapan proyek sebelum submit.
 ---
 
 ## 2. GitHub Repository
-*Status kelengkapan file dan repository:*
 
-- [x] **Repository Public:** *[Pastikan Setting Repo di GitHub adalah 'Public']*
+- [x] **Repository Public:** 
 - [x] **Tested Code:** Script `.ipynb` sudah dirancang untuk berjalan dari awal sampai akhir.
 - [x] **Struktur Folder:** Script otomatis membuat folder `data/`, `models/`, `images/`, `src/`.
 - [x] **README.md:** Isi Laporan `.md` bisa langsung dijadikan README.
@@ -31,7 +29,6 @@ Gunakan checklist ini untuk memverifikasi kelengkapan proyek sebelum submit.
 ---
 
 ## 3. Kualitas Kode (Source Code)
-*Status kualitas kode di dalam Notebook:*
 
 - [x] **Deep Learning Training:** Kode training Neural Network sudah disertakan (`model.fit`).
 - [x] **Logging:** Kode sudah menampilkan output R2 Score dan MAE di layar.
