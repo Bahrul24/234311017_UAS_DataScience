@@ -453,7 +453,7 @@ Memahami pentingnya membandingkan model kompleks (Deep Learning) dengan model kl
 
 ---
 
-## 9. FUTURE WORK (Opsional)
+## 9. FUTURE WORK 
 
 **Saran pengembangan untuk proyek selanjutnya:**
 
@@ -472,7 +472,7 @@ Memahami pentingnya membandingkan model kompleks (Deep Learning) dengan model kl
 
 ---
 
-## 10. REPRODUCIBILITY (WAJIB)
+## 10. REPRODUCIBILITY 
 
 ### 10.1 GitHub Repository
 
