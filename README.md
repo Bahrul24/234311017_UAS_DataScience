@@ -1,10 +1,10 @@
 # 📘 Judul Proyek
-*ANALISIS PREDIKSI KONSUMSI BAHAN BAKAR (MPG) MENGGUNAKAN BASELINE, MACHINE LEARNING, DAN DEEP LEARNING*
+ANALISIS PREDIKSI KONSUMSI BAHAN BAKAR (MPG) MENGGUNAKAN BASELINE, MACHINE LEARNING, DAN DEEP LEARNING
 
 ## 👤 Informasi
 - **Nama:** Mohammad Dimas Bahrul Ikhwani 
 - **Repo:** https://github.com/Bahrul24/234311017_UAS_DataScience  
-- **Video:** [...]  
+- **Video:** https://www.youtube.com/watch?v=QLz-TrGvI_U  
 
 ---
 
