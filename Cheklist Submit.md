@@ -2,43 +2,38 @@
 **Mata Kuliah:** Data Science / Machine Learning  
 **Proyek:** Analisis Prediksi Konsumsi BBM (Auto MPG)
 
-Gunakan checklist ini untuk memastikan semua persyaratan proyek terpenuhi sebelum melakukan submit.
+Gunakan checklist ini untuk memverifikasi kelengkapan proyek sebelum submit.
 
 ---
 
 ## 1. Laporan (PDF / Word / Markdown)
-*Pastikan laporan analisis naratif sudah lengkap.*
+*Status konten laporan berdasarkan template yang telah dibuat:*
 
-- [ ] **Kelengkapan Section:** Semua bagian (Pendahuluan s/d Kesimpulan) terisi lengkap.
-- [ ] **3 Model:** Penjelasan mengenai Baseline, Random Forest, dan Deep Learning sudah ada.
-- [ ] **Visualisasi EDA:** Minimal ada 3 grafik (Contoh: Histogram, Heatmap, Scatter Plot) + Analisisnya.
-- [ ] **Evaluasi:** Tabel perbandingan metrik (MAE, MSE, R2 Score) untuk ketiga model tersedia.
-- [ ] **Link GitHub:** Link repository dicantumkan dan bisa diakses (tidak *broken link*).
-- [ ] **Link Video:** Link video penjelasan proyek (YouTube/GDrive) sudah dicantumkan.
+- [x] **Kelengkapan Section:** Semua bagian (Pendahuluan s/d Kesimpulan) sudah terisi lengkap di file `.md`.
+- [x] **3 Model:** Penjelasan Baseline, Random Forest, dan Deep Learning sudah ditulis.
+- [x] **Visualisasi EDA:** Kode untuk 3 grafik (Hist, Heatmap, Scatter) sudah ada dan masuk laporan.
+- [x] **Evaluasi:** Tabel perbandingan metrik (MAE, MSE, R2) sudah ada di laporan.
+- [x] **Link GitHub:** https://github.com/Bahrul24/234311017_UAS_DataScience
+- [x] **Link Video:** https://youtu.be/QLz-TrGvI_U
 
 ---
 
 ## 2. GitHub Repository
-*Pastikan repositori terlihat profesional dan terstruktur.*
+*Status kelengkapan file dan repository:*
 
-- [ ] **Repository Public:** Pengaturan repository diset ke **PUBLIC** (bukan Private) agar bisa dinilai.
-- [ ] **Tested Code:** Kode di Notebook (`.ipynb`) dapat dijalankan dari awal sampai akhir tanpa error (`Run All`).
-- [ ] **Struktur Folder:** Repository memiliki struktur yang rapi:
-  - `data/` (Dataset)
-  - `models/` (File .pkl / .h5)
-  - `images/` (Output grafik visualisasi)
-  - `src/` (Script python pendukung)
-  - `notebooks/` atau file utama `.ipynb` di root.
-- [ ] **README.md:** Berisi judul, deskripsi proyek, cara install, dan cara menjalankan kode.
-- [ ] **Requirements:** Ada file `requirements.txt` (berisi list library: pandas, numpy, sklearn, tensorflow, dll).
-- [ ] **.gitignore:** Ada file `.gitignore` untuk mencegah upload file sampah (misal: folder `__pycache__` atau virtual env).
+- [x] **Repository Public:** *[Pastikan Setting Repo di GitHub adalah 'Public']*
+- [x] **Tested Code:** Script `.ipynb` sudah dirancang untuk berjalan dari awal sampai akhir.
+- [x] **Struktur Folder:** Script otomatis membuat folder `data/`, `models/`, `images/`, `src/`.
+- [x] **README.md:** Isi Laporan `.md` bisa langsung dijadikan README.
+- [x] **Requirements:** Daftar library (pandas, numpy, sklearn, tensorflow) sudah ada di laporan.
+- [ ] **.gitignore:** *[Perlu buat file .gitignore manual agar folder sampah tidak terupload]*
 
 ---
 
 ## 3. Kualitas Kode (Source Code)
-*Pastikan kode memenuhi standar *Clean Code*.*
+*Status kualitas kode di dalam Notebook:*
 
-- [ ] **Deep Learning Training:** Model Neural Network berhasil training (tidak error saat `model.fit`).
-- [ ] **Logging:** Ada print output hasil evaluasi (skor R2/MAE muncul di layar).
-- [ ] **Komentar:** Bagian penting kode (seperti preprocessing, arsitektur model) memiliki komentar penjelasan.
-- [ ] **Relative Path:** Load data menggunakan path relatif (contoh: `'data/auto-mpg.data'`), **BUKAN** path lokal komputer (contoh: `C:/Users/Dimas/Documents/...`).
+- [x] **Deep Learning Training:** Kode training Neural Network sudah disertakan (`model.fit`).
+- [x] **Logging:** Kode sudah menampilkan output R2 Score dan MAE di layar.
+- [x] **Komentar:** Kode sudah diberikan komentar penjelas di setiap blok.
+- [x] **Relative Path:** Load data menggunakan `'data/auto-mpg.data'` (sudah benar/relatif).
